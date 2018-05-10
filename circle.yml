@@ -16,3 +16,6 @@ dependencies:
       else
         echo "Cached CMake found"
       fi
+
+compile:
+  source setup.sh
