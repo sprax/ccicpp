@@ -35,15 +35,15 @@ jobs:
     docker:
       - image: robotlocomotion/circleci:xenial
 
-    working_directory: ~/drake-shambhala
+    # working_directory: ~/asdf/ccicpp
 
     steps:
       - checkout
 
       - run:
           name: setup
-          command: ./scripts/continuous_integration/circle_ci/setup
+          # command: ./scripts/continuous_integration/circle_ci/setup
 
       - run:
           name: build and test
-          command: ./scripts/continuous_integration/circle_ci/build_test
+          # command: ./scripts/continuous_integration/circle_ci/build_test
