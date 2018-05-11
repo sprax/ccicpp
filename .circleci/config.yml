@@ -5,7 +5,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: cd src && clang++ -std=c++11  main.cpp -o main
+      - run: cd src && g++ -std=c++11  main.cpp -o main
       - run: main
 test:
   override:
