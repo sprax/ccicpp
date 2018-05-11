@@ -6,9 +6,7 @@ jobs:
     steps:
       - checkout
       - run: build/main
-  build:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "A first hello"
+      - run: make test
+test:
+  override:
+    - cd bin; ./gtest_myint
