@@ -27,23 +27,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
----
-version: 2
-
-jobs:
-  build:
-    docker:
-      - image: robotlocomotion/circleci:xenial
-
-    working_directory: ~/drake-shambhala
-
-    steps:
-      - checkout
-
-      - run:
-          name: setup
-          command: ./scripts/continuous_integration/circle_ci/setup
-
-      - run:
-          name: build and test
-          command: ./scripts/continuous_integration/circle_ci/build_test
+FROM ubuntu:16.04
+RUN apt-get update -qq \
+  && apt-get install -qy --no-install-recommends \
+    ca-certificates \
+    git \
+    openssh-client \
+  && rm -rf /var/lib/apt/lists/*
