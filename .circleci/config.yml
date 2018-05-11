@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: cd src && g++ -std=c++11  main.cpp -o main && ./main
-      - run: ./build/main
+      - run: ./src/main
 test:
   override:
     - cd bin; ./gtest_myint
