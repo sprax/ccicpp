@@ -42,8 +42,10 @@ jobs:
 
       - run:
           name: setup
+          command: echo "In setup..."
           # command: ./scripts/continuous_integration/circle_ci/setup
 
       - run:
           name: build and test
+          command: echo "In run..."
           # command: ./scripts/continuous_integration/circle_ci/build_test
