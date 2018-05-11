@@ -5,8 +5,8 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: build/main
-      - run: make test
+      - run: cd src && clang++ -std=c++11  main.cpp -o main
+      - run: main
 test:
   override:
     - cd bin; ./gtest_myint
