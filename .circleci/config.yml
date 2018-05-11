@@ -38,6 +38,7 @@ jobs:
     # working_directory: ~/asdf/ccicpp
 
     steps:
+      - run: apt update && apt install -y binutils make cmake
       - checkout
 
       - run:
