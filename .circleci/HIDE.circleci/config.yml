@@ -7,13 +7,7 @@ jobs:
     docker:
       - image: circleci/python:2.7.15-stretch-browsers
     steps:
-      - >
-        if [ ! -d ~/cmake-3.6.2-Linux-x86_64 ]; then
-          echo "No cache - building CMake"
-          cd ~ && wget --quiet https://cmake.org/files/v3.6/cmake-3.6.2-Linux-x86_64.tar.gz && tar -xvf cmake-3.6.2-Linux-x86_64.tar.gz
-        else
-          echo "Cached CMake found"
-        fi
+      - run: apt update && apt install -y binutils make cmake
       - checkout
       - run: cd src && g++ -std=c++11  main.cpp -o main && ./main
       - run: mkdir build && cd build && cmake ..
