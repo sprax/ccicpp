@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/c++
     steps:
       - checkout
       - run: cd src && g++ -std=c++11  main.cpp -o main && ./main
