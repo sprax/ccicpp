@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/c++
+      - image: circleci/python:2.7.15-stretch-browsers
     steps:
       - checkout
       - run: cd src && g++ -std=c++11  main.cpp -o main && ./main
