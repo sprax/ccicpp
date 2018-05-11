@@ -27,27 +27,10 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
----
-version: 2
-
-jobs:
-  build:
-    docker:
-      - image: robotlocomotion/circleci:xenial
-
-    # working_directory: ~/asdf/ccicpp
-
-    steps:
-      - run:
-          name: setup
-          command: echo "In setup..."
-          # command: ./scripts/continuous_integration/circle_ci/setup
-          command: apt update && apt install -y build-essential binutils make cmake
-      - checkout
-
-      - run:
-          name: build and test
-          command: echo "In build and test..."
-          command: cd src && g++ -std=c++11  main.cpp -o main && ./main
-          command: mkdir build && cd build && cmake ..
-          # command: ./scripts/continuous_integration/circle_ci/build_test
+FROM ubuntu:16.04
+RUN apt-get update -qq \
+  && apt-get install -qy --no-install-recommends \
+    ca-certificates \
+    git \
+    openssh-client \
+  && rm -rf /var/lib/apt/lists/*
