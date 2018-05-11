@@ -38,15 +38,16 @@ jobs:
     # working_directory: ~/asdf/ccicpp
 
     steps:
-      - run: apt update && apt install -y binutils make cmake
-      - checkout
-
       - run:
           name: setup
           command: echo "In setup..."
           # command: ./scripts/continuous_integration/circle_ci/setup
+          command: apt update && apt install -y binutils make cmake
+      - checkout
 
       - run:
           name: build and test
-          command: echo "In run..."
+          command: echo "In build and test..."
+          command: cd src && g++ -std=c++11  main.cpp -o main && ./main
+          command: mkdir build && cd build && cmake ..          
           # command: ./scripts/continuous_integration/circle_ci/build_test
