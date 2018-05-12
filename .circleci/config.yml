@@ -42,7 +42,7 @@ jobs:
           name: setup
           command: echo "In setup..."
           # command: ./scripts/continuous_integration/circle_ci/setup
-          command: apt update && apt install -y build-essential binutils make cmake
+          command: apt update && apt install -y build-essential binutils cli11 cmake make
       - checkout
 
       - run:
