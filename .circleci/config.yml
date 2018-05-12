@@ -49,5 +49,5 @@ jobs:
           name: build and test
           command: echo "In build and test..."
           command: cd src && g++ -std=c++11  main.cpp -o main && ./main
-          command: mkdir build && cd build && cmake ..
+          command: mkdir build && cd build && cmake .. && cmake --build .
           # command: ./scripts/continuous_integration/circle_ci/build_test
