@@ -1,0 +1,23 @@
+# Ignore the example directory for robot URDFs
+robots/
+
+# Ignore the build directory and compiled binaries
+build*/
+lcmtypes/stuffgetter
+
+# Ignore temp files
+temp/
+.temp*
+
+# Ignore log files
+*.json
+*.png
+*.pickle
+
+# Ignore extraneous files 
+*~
+*.bak
+*.pyc
+*DS_Store
+*snopt.out
+*.ipynb_checkpoints
