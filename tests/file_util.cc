@@ -3,19 +3,25 @@
 #define __FILE_UTIL_H
 
 // #include <filesystem>    // (C++17)
-#include <cmath>
+// #include <cmath>
+#include <errno.h>
 #include <glob.h>
 #include <iostream>
-#include <iterator>
+// #include <iterator>
 #include <limits>
-#include <list>
+#include <limits.h>     /* PATH_MAX */
 #include <pwd.h>
 #include <stdio.h>  /* defines FILENAME_MAX */
-#include <sys/stat.h>
+#include <sys/stat.h>   /* mkdir(2) */
 #include <sys/types.h>
 #include <unistd.h>
 
 #include <gtest/gtest.h>
+
+#ifndef PATH_MAX
+#error "not defined"
+#endif
+
 
 using std::cin;
 using std::cout;
@@ -46,8 +52,6 @@ std::string get_cwd()
   return current_working_dir;
 }
 
-#include <sys/stat.h>   /* mkdir(2) */
-#include <errno.h>
 
 /// makes dirs recursively using path_str; returns 0 on success, negative int on error.
 /// If path_str idenfies an existing directory or file, this function does not change it.
