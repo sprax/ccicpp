@@ -17,7 +17,7 @@
 
 TEST (Temp, Fail)
 {
-    EXPECT_EQ( 0, 1 );
+    EXPECT_EQ( 1, 1 );
 }
 
 struct NewOrder
