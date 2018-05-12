@@ -127,7 +127,7 @@ bool get_latest_file_name( const char *dir_path
 bool get_new_order_from_latest_file( NewOrder& newOrder
                                    , std::string& new_file_name
                                    , time_t& old_time
-                                   , const char *dir_path = "../tests/log"
+                                   , const char *dir_path = "../tests/data"
                                    , const char *file_ext = "txt"
                                    , int verbose = 1
 ) {
@@ -147,7 +147,7 @@ bool get_new_order_from_latest_file( NewOrder& newOrder
 
 TEST (PollDirs, OrderLog)
 {
-    const char *dir_path = "../tests/log";
+    const char *dir_path = "../tests/data";
     const char *file_ext = "txt";
     int verbose = 4;
     std::cout << "$RUN " << "PollDirs: " << dir_path << " " << file_ext
@@ -182,7 +182,7 @@ TEST (PollDirs, OrderLog)
     EXPECT_NO_THROW( got_order = get_new_order_from_latest_file( nxtOrder
                                                                , nxtFileName
                                                                , nxtFileTime
-                                                               , "../tests/log"
+                                                               , "../tests/data"
                                                                , "txt", 1)
     );
     EXPECT_TRUE( got_order );
