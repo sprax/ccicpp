@@ -1,12 +1,11 @@
-// test_make_dirs.cc: part of a googletest suite
-#include "json_interface.h"
+// test_poll_dir.cc: part of a googletest suite
 #include "file_util.cc"
 #include <gtest/gtest.h>
 
 #include <dirent.h>
 #include <chrono>
-#include <cstring>
-#include <glob.h>
+// #include <cstring>
+// #include <glob.h>
 #include <iostream>
 #include <string>
 #include <sys/stat.h>
@@ -15,9 +14,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <typeinfo>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
 
 struct NewOrder
 {
