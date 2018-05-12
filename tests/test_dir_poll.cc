@@ -15,6 +15,11 @@
 #include <time.h>
 #include <typeinfo>
 
+TEST (Temp, Fail)
+{
+    EXPECT_EQ( 0, 1 );
+}
+
 struct NewOrder
 {
     int quantity;
@@ -143,7 +148,6 @@ bool get_new_order_from_latest_file( NewOrder& newOrder
     }
     return true;
 }
-
 
 TEST (PollDirs, OrderLog)
 {
