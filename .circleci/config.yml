@@ -43,6 +43,23 @@ jobs:
           command: echo "In setup..."
           # command: ./scripts/continuous_integration/circle_ci/setup
           command: apt update && apt install -y build-essential binutils cli11 cmake make
+          command: apt install --no-install-recommends $(tr '\n' ' ' <<EOF
+bazel
+ca-certificates
+clang-format-4.0
+cmake
+git
+libtinyxml-dev
+libtool
+libxml2-dev
+libyaml-cpp-dev
+pkg-config
+protobuf-compiler
+python-dev
+python-gtk2
+python-protobuf
+EOF
+)
       - checkout
 
       - run:
