@@ -2,14 +2,16 @@
 #ifndef __FILE_UTIL_H
 #define __FILE_UTIL_H
 
-// #include <filesystem>    // (C++17)
-// #include <cmath>
 #include <errno.h>
 #include <glob.h>
 #include <iostream>
 // #include <iterator>
 #include <limits>
 #include <limits.h>     /* PATH_MAX */
+#ifndef PATH_MAX
+#error "not defined"
+#endif
+
 #include <pwd.h>
 #include <stdio.h>  /* defines FILENAME_MAX */
 #include <sys/stat.h>   /* mkdir(2) */
@@ -18,16 +20,12 @@
 
 #include <gtest/gtest.h>
 
-#ifndef PATH_MAX
-#error "not defined"
-#endif
-
-
 using std::cin;
 using std::cout;
 using std::cerr;
 using std::endl;
 using std::string;
+
 
 std::string getenv_var(const std::string& var) {
      const char *val = std::getenv(var.c_str());
