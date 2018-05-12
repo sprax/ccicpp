@@ -43,7 +43,7 @@ jobs:
           command: echo "In setup..."
           # command: ./scripts/continuous_integration/circle_ci/setup
           # command: apt update && apt install -y build-essential binutils clang-format-4.0 cmake git make
-          command: apt update && apt install -y g++ clang-format-4.0 cmake git make
+          command: apt update && apt install -y g++ cmake
 
       - checkout
 
