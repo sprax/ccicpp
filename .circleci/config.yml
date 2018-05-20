@@ -22,5 +22,4 @@ jobs:
           name: build and test
           command: |
             echo "In build and test..."
-            cd src && g++ -std=c++11  main.cpp -o main && ./main
-            mkdir build && cd build && cmake .. && make -j && make test
+            mkdir build && cd build && cmake .. && make -j8 && make test
